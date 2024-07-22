@@ -1,0 +1,24 @@
+// Code by R K Shakya (C++)
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(12, OUTPUT);
+  pinMode(A0, INPUT);
+}
+
+void loop()
+{
+  int LDRValue= analogRead(A0);
+  Serial.print(" SensorValue = ");
+  Serial.print(LDRValue);
+  if(LDRValue<200)
+  {
+    digitalWrite(12,HIGH);
+  }
+  else
+  {
+    digitalWrite(12,LOW);
+  }
+    
+}
